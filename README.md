@@ -42,12 +42,13 @@
 Шаг 2: Подготовка подготовка файлов конфигурации
 
 1. Поскольку узлы elstik, web1, web2 не выходят в глобальную сеть, я вручную подготовил конфиги для сервисов:
-Zabbix-agent
-Logstash
-Filebeat
+[Elasticsearch](https://github.com/Santa-was-a-skinhead/Diplom/blob/main/cfg/1/elasticsearch.yml)
+[Logstash](https://github.com/Santa-was-a-skinhead/Diplom/blob/main/cfg/1/logstash.conf)
+[Filebeat](https://github.com/Santa-was-a-skinhead/Diplom/blob/main/cfg/1/filebeat.yml)
 
-2. Создал статичную страницу, которая будет играть роль сайта.
-Index.html
+3. Создал статичную страницу, которая будет играть роль сайта. Также создал конфиг виртуального хоста, который слушает порт 8080
+[Index.html](https://github.com/Santa-was-a-skinhead/Diplom/blob/main/cfg/1/index.html)
+[Diplom.conf](https://github.com/Santa-was-a-skinhead/Diplom/blob/main/cfg/1/diplom.conf)
 
 Все сонфиги представлены в папке cfg.
 
