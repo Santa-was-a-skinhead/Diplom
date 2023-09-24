@@ -14,4 +14,4 @@
 
 Результат работы:
 ВМ
-[ВМ](https://github.com/Santa-was-a-skinhead/Diplom/blob/main/img/vm.png)
+![ВМ](https://github.com/Santa-was-a-skinhead/Diplom/blob/main/img/vm.png)
