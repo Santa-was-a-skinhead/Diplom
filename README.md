@@ -63,6 +63,7 @@ Index.html
    filebeat-8.9.2-amd64.deb
    elasticsearch-8.9.1-amd64.deb
 4. Вносим изменения в inventory-файл.
+```
 [nginx]
 nginx1 ansible_host=10.0.129.3 ansible_port=22 ansible_user=ubuntu ansible_ssh_private_key_file=~/braineater/.ssh/braineater ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ubuntu@158.160.77.90 -i ~/braineater/.ssh/braineater"'
 nginx2 ansible_host=192.168.1.28 ansible_port=22 ansible_user=ubuntu ansible_ssh_private_key_file=~/braineater/.ssh/braineater ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ubuntu@158.160.77.90 -i ~/braineater/.ssh/braineater"'
@@ -74,6 +75,7 @@ bastion ansible_host=158.160.77.90 ansible_port=22 ansible_user=ubuntu ansible_s
 elastik ansible_host=192.168.1.30 ansible_port=22 ansible_user=ubuntu ansible_ssh_private_key_file=~/braineater/.ssh/braineater ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ubuntu@158.160.77.90 -i ~/braineater/.ssh/braineater"'
 [kibana_server]
 kibana ansible_host=192.168.1.36 ansible_port=22 ansible_user=ubuntu ansible_ssh_private_key_file=~/braineater/.ssh/braineater ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ubuntu@158.160.77.90 -i ~/braineater/.ssh/braineater"'
+```
 
 
    
