@@ -2,6 +2,8 @@
 # Diplom
 Описание хода выполнения Дипломного задания.
 
+ВНИМАНИЕ! Все данные для доступа к ресурсам будут находиться в комментарии к выполненному заданию, в интерфейсе Нетологии.
+
 Для развертывания необходимой инфраструктуры используется Ansilbe.
 Для подключения к облаку необходимо подключиться к провайдеру и получить oAuth_token. Данные облака и ключ указываются в инфраструктурном файле.
 
@@ -76,8 +78,26 @@ elastik ansible_host=192.168.1.30 ansible_port=22 ansible_user=ubuntu ansible_ss
 [kibana_server]
 kibana ansible_host=192.168.1.36 ansible_port=22 ansible_user=ubuntu ansible_ssh_private_key_file=~/braineater/.ssh/braineater ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q ubuntu@158.160.77.90 -i ~/braineater/.ssh/braineater"'
 ```
+5. Разрешаем проброс ключа с локальной машины на bastion-host агентом SSH в файле /etc/ssh_config
+   ```
+   Host 158.160.77.90
+    ForwardAgent yes
+   ```
+Шаг 4: Установка ПО на машины из плэйбуков Ansible
+1. ansible-playbook zabbix-server.yml - В данном плэбуке выполняется установка Zabbix-server из официальной коллекции. Также выполняется установка всех необходимых компонентов (СУБД, zabbix-web, php, zabbix-agent) и задаютс настройки для корректной работы и передается нужный конфиг.
+2. ansible-playbook elastik.yml - В данном плэйбуке выполняется установка Elastiksearch, Logstash и Filebeat.Также задаются настройки для корректной работы и передается нужный конфиг.
+3. ansible-playbook kibana.yml - В данном плэйбуке выполняется установка Kibana из коллекции, а также задаются настройки для корректной работы.
+4. ansible-playbook kibana.yml - В данном плэйбуке выполняется установка nginx, создание виртуального хоста и установка статичной страницы index.html
 
+   Все плэйбуки размещены в папке playbooks
 
+Шаг 5: Настройка мониторинга Zabbix
+1. Добавляем хосты в веб-интерфейсе, дожидаемся отчета об их доступности
+2. Подключаем к хостам шаблон Linux by Zabbix-agent
+3. К хостам с nginx подключаем шаблон Nginx by Zabbix-agent
+4. Создаем дэшборды по нужным метрикам.
+
+   
    
    
    
