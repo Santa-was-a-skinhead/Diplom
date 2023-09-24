@@ -7,6 +7,7 @@
 158.160.79.1    zabbix.example.com 
 Login - Netology 
 Pass Eeji6aogaCh6
+Dashboard - USE
 
 Kibana - перейдите по ссылке http://158.160.82.75:5601
 View error - логи /var/log/ngnix/error.log
