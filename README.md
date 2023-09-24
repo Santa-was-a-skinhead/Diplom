@@ -85,10 +85,10 @@ kibana ansible_host=192.168.1.36 ansible_port=22 ansible_user=ubuntu ansible_ssh
     ForwardAgent yes
    ```
 Шаг 4: Установка ПО на машины из плэйбуков Ansible
-1. ansible-playbook zabbix-server.yml https://github.com/Santa-was-a-skinhead/Diplom/blob/main/playbooks/zabbix-server.yml - В данном плэбуке выполняется установка Zabbix-server из официальной коллекции. Также выполняется установка всех необходимых компонентов (СУБД, zabbix-web, php, zabbix-agent) и задаютс настройки для корректной работы и передается нужный конфиг.
-2. ansible-playbook elastik.yml https://github.com/Santa-was-a-skinhead/Diplom/blob/main/playbooks/elastik.yml - В данном плэйбуке выполняется установка Elastiksearch, Logstash и Filebeat.Также задаются настройки для корректной работы и передается нужный конфиг. Пакеты скачаны из репозитория deb http://elasticrepo.serveradmin.ru
-3. ansible-playbook kibana.yml https://github.com/Santa-was-a-skinhead/Diplom/blob/main/playbooks/kibana.yaml  - В данном плэйбуке выполняется установка Kibana из коллекции, а также задаются настройки для корректной работы. Для корректной установки из коллекции я заменил в переменных адрес стандартного репозитория ELK на deb http://elasticrepo.serveradmin.ru
-4. ansible-playbook nginx.yml https://github.com/Santa-was-a-skinhead/Diplom/blob/main/playbooks/nginx.yml - В данном плэйбуке выполняется установка nginx, создание виртуального хоста и установка статичной страницы index.html
+1. ansible-playbook [zabbix-server.yml](https://github.com/Santa-was-a-skinhead/Diplom/blob/main/playbooks/zabbix-server.yml) - В данном плэбуке выполняется установка Zabbix-server из официальной коллекции. Также выполняется установка всех необходимых компонентов (СУБД, zabbix-web, php, zabbix-agent) и задаютс настройки для корректной работы и передается нужный конфиг.
+2. ansible-playbook [elastik.yml](https://github.com/Santa-was-a-skinhead/Diplom/blob/main/playbooks/elastik.yml) - В данном плэйбуке выполняется установка Elastiksearch, Logstash и Filebeat.Также задаются настройки для корректной работы и передается нужный конфиг. Пакеты скачаны из репозитория deb http://elasticrepo.serveradmin.ru
+3. ansible-playbook [kibana.yml](https://github.com/Santa-was-a-skinhead/Diplom/blob/main/playbooks/kibana.yaml)  - В данном плэйбуке выполняется установка Kibana из коллекции, а также задаются настройки для корректной работы. Для корректной установки из коллекции я заменил в переменных адрес стандартного репозитория ELK на deb http://elasticrepo.serveradmin.ru
+4. ansible-playbook [nginx.yml](https://github.com/Santa-was-a-skinhead/Diplom/blob/main/playbooks/nginx.yml) - В данном плэйбуке выполняется установка nginx, создание виртуального хоста и установка статичной страницы index.html
 
    Все плэйбуки размещены в папке playbooks
 
